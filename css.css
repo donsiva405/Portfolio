@@ -1,0 +1,346 @@
+/* ===============================
+   RESET & BASE STYLES
+=============================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f8f8;
+  color: #333;
+}
+
+/* HEADER */
+.main-header {
+  background: linear-gradient(to right, #ff7b00, #ffb347);
+  padding: 60px 20px;
+  text-align: center;
+  color: #fff;
+}
+.header-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+.header-content p {
+  font-size: 1.2rem;
+}
+.cta-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #fff;
+  color: #ff7b00;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background 0.3s, color 0.3s;
+}
+.cta-button:hover {
+  background: #ffdd99;
+  color: #222;
+}
+
+/* NAVIGATION */
+.main-nav {
+  background-color: #222;
+  text-align: center;
+  padding: 10px 0;
+}
+.main-nav ul {
+  list-style: none;
+  display: inline-flex;
+  gap: 30px;
+}
+.main-nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 12px;
+  transition: 0.3s;
+}
+.main-nav ul li a:hover {
+  color: #ffdd99;
+}
+.main-nav ul li a.active {
+  color: #ffdd99;
+  border-bottom: 2px solid #ffdd99;
+}
+
+/* FADE SECTIONS (for About, Services, Software, Contact) */
+.fade-section {
+  width: 100%;
+  margin: 60px 0;
+  padding: 0 20px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.fade-section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.light-bg {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 40px 20px;
+}
+.gray-bg {
+  background-color: #f1f1f1;
+  border-radius: 8px;
+  padding: 40px 20px;
+}
+
+/* ABOUT SECTION */
+.about-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.profile-pic {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #ffb347;
+}
+.about-text {
+  max-width: 600px;
+}
+.about-text h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+.about-text p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+.about-text ul {
+  list-style: none;
+  margin-top: 10px;
+}
+.about-text ul li {
+  margin: 8px 0;
+  font-size: 1rem;
+}
+
+/* SERVICES SECTION (3x3 Grid) */
+#services h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.service-item {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+.service-item:hover {
+  transform: translateY(-5px);
+}
+.service-item img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+.service-item h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #ff7b00;
+}
+.service-item p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* SOFTWARE KNOWLEDGE SECTION */
+#skills h2 {
+  text-align: center;
+  margin-bottom: 40px; /* Extra space below heading */
+}
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 30px;
+  align-items: center;
+  justify-items: center;
+  margin-top: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.skill-item {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.skill-item img {
+  width: 60px;
+  transition: transform 0.3s;
+}
+.skill-item img:hover {
+  transform: scale(1.1);
+}
+.skill-item p {
+  margin-top: 12px;
+  font-weight: bold;
+}
+
+/* COMPANIES SECTION (Continuous Conveyor Belt) */
+#companies {
+  /* No fade for companies section */
+}
+.sponsor-logos {
+  overflow: hidden;
+  width: 100%;
+  background: linear-gradient(90deg, #d53369, #daae51);
+  padding: 40px 0;
+  position: relative;
+}
+.logo-track {
+  display: inline-flex;
+  position: relative;
+  left: 0;
+  white-space: nowrap;
+  height: 200px;
+  margin: 0 auto; /* Center the track */
+}
+.logo-track img {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+.logo-track img:hover {
+  opacity: 1;
+}
+
+/* CONTACT SECTION */
+#contact h2 {
+  text-align: center;
+}
+.contact-section {
+  background-color: #ffb347;
+  color: #fff;
+  border-radius: 8px;
+  padding: 60px 20px;
+  margin-bottom: 60px;
+  text-align: center;
+}
+.contact-content h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+.contact-form-container {
+  max-width: 600px;
+  margin: 0 auto 30px;
+}
+#contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+#contact-form input,
+#contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+#contact-form button {
+  padding: 10px 20px;
+  background: #222;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+#contact-form button:hover {
+  background: #444;
+}
+.contact-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  max-width: 600px;
+  margin: 40px auto 0;
+}
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1rem;
+  transform: translateY(30px);
+  opacity: 0;
+  transition: 0.5s ease;
+}
+.contact-link img {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+}
+.contact-link:hover {
+  color: #333;
+  background-color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+.contact-link span {
+  display: inline-block;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .header-content h1 {
+    font-size: 1.8rem;
+  }
+  .cta-button {
+    margin-top: 15px;
+  }
+  .about-wrapper {
+    flex-direction: column;
+    text-align: center;
+    margin: 0 auto;
+  }
+  .profile-pic {
+    margin-bottom: 20px;
+  }
+  .services-grid {
+    grid-template-columns: 1fr; /* Stack services on mobile */
+  }
+  .contact-links {
+    flex-direction: column;
+  }
+  .logo-track {
+    height: 150px;
+  }
+  .logo-track img {
+    width: 150px;
+    height: 150px;
+  }
+}
